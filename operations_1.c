@@ -1,29 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_push_swap.h                                :+:      :+:    :+:   */
+/*   operations_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 18:27:15 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/08 17:41:13 by rbolton          ###   ########.fr       */
+/*   Created: 2019/08/08 13:19:50 by rbolton           #+#    #+#             */
+/*   Updated: 2019/08/08 13:19:56 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_PUSH_SWAP_H
-# define CHECKER_PUSH_SWAP_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include "./libft/libft.h"
 
-typedef struct		s_stack
-{
-	int				to_sort;
-	int				position;
-	struct s_stack	*next;
-}					t_stack;
-
-int					atoi_check(char **array);
-
-#endif
