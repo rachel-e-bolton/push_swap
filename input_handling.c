@@ -5,8 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/14 17:55:10 by rbolton           #+#    #+#             */
+/*   Updated: 2019/08/14 18:49:51 by rbolton          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_handling.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 18:26:50 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/08 17:41:07 by rbolton          ###   ########.fr       */
+/*   Updated: 2019/08/14 17:37:22 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +35,9 @@
 ** Step 2: Check 2D array for anything not valid as a candidate for ATOI.
 ** - THIS IS A SEPARATE FUNCTION CALL USING THE 2D CHAR ARRAY.
 ** ONLY MOVES ON TO NEXT STEP IF SUCCESSFUL.
-** Step 3: Create Stack A. - FUNCTION CALL USING "VALID" 2D CHAR
-** ARRAY BASED ON OUTCOME OF STEP 1. ONLY MOVES ON TO NEXT STEP IF SUCCESSFUL.
-** Step 4: Check each element of Stack A is a valid int.
-** - FUNCTION CALL USING CREATED STACK A. ONLY MOVES ON TO
-** NEXT STEP IF SUCCESSFUL.
-** Step 5: Check each element of Stack A is unique.
-** - FUNCTION CALL USING CREATED STACK A. ONLY MOVES ON TO
-** NEXT STEP IF SUCCESSFUL.
+** Step 3: Check for all ints.
+** Step 4: Check for uniqueness.
+** Step 5: Set 2D array to Stack A.
 ** Step 6: Check if stack is sorted.
 ** - FUNCTION CALL USING CREATED STACK A. ONLY MOVES ON TO
 ** NEXT STEP IF SUCCESSFUL.
@@ -72,26 +79,36 @@ int		atoi_check(char **array)
 	while (array[i] != NULL)
 	{
 		if (array[i][0] == '-')
-			((ft_isdigit(array[i][1])) == TRUE ? k++ : return (-1));
+			((ft_isdigit(array[i][1])) == TRUE ? k++ : return (FALSE));
 		while ((ft_isdigit(array[i][k])) == TRUE)
 		{
 			k++;
 		}
 		if (array[i][k] != '\0')
-			return (-1);
+			return (FALSE);
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 /*
-** STEP 3: Create Stack A
+** STEP 3: Check that all elements are ints. 
+** NB: THIS NEEEEEDS ATOL. IF THE OUTPUT OF 
+** FT_ATOL is BIGGER OR SMALLER THAN MAX/MIN INT, then REJECT.
+*/
+
+int		all_int(char **array)
+{
+	int	i;
+	while (array[i] != NULL) //Check if the atol of each element is between int_min and int_max
+}
+
+/*
+** STEP 5: Create Stack A
 ** 
 ** This step uses push, which is defined in the operations files.
 ** It takes the 2D array of Valid atoi candidates and starting at
 ** the end of the array, it pushes them all onto the stack.
-** 
-** NB RIGHT NOW: STILL NEED TO LOOK AGAIN AT STACK CREATION AND INITIALISATION WITH LINKED LISTS.
 */
 
 t_stack	*create_stack(char **array)
@@ -108,7 +125,9 @@ t_stack	*create_stack(char **array)
 	while (i--)
 	{
 		data = ft_atoi(array[i]);
-		push(new, data);
+		new = push(new, data);
 	}
 	return (new);
 }
+
+

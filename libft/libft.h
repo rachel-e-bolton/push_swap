@@ -6,7 +6,7 @@
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:03:46 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/05 14:22:00 by rbolton          ###   ########.fr       */
+/*   Updated: 2019/08/14 17:50:46 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void				ft_putnbr_endl(int n);
 void				ft_putnbr_endl_fd(int n, int fd);
 size_t				ft_strlen(char const *s);
 int					ft_atoi(char const *str);
+long int			ft_atol(char const *str);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
