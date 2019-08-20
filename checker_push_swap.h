@@ -6,7 +6,7 @@
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 18:27:15 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/14 18:49:55 by rbolton          ###   ########.fr       */
+/*   Updated: 2019/08/20 18:29:43 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,24 @@
 # include <string.h>
 # include "./libft/libft.h"
 
-typedef struct		s_stack
+typedef struct		s_node
 {
 	int				to_sort;
 	int				position;
 	struct s_stack	*next;
+}					t_node;
+
+typedef struct		s_stack
+{
+	t_node			*head;
+	t_node			*tail;
 }					t_stack;
 
 int					atoi_check(char **array);
-t_stack				*create_stack(char **array);
-t_stack				*push(t_stack *head, int data);
-t_stack				*pop(t_stack *head, int *element); //to use this meaningfully: when calling pop(), ensure that a pointer to int exists. That pointer will contain the popped data after the function call which can then be used to either compare or push() to another stack.
+int					all_int(char **array);
+t_node				*create_stack(char **array);
+t_node				*push(t_node *head, int data);
+t_node				*pop(t_node *head, int *element); //to use this meaningfully: when calling pop(), ensure that a pointer to int exists. That pointer will contain the popped data after the function call which can then be used to either compare or push() to another stack.
 int					is_empty(t_stack *head);
 
 

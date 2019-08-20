@@ -6,19 +6,7 @@
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 17:55:10 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/14 18:49:51 by rbolton          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   input_handling.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 18:26:50 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/14 17:37:22 by rbolton          ###   ########.fr       */
+/*   Updated: 2019/08/20 18:29:36 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +18,9 @@
 /*
 ** GENERALISED STEPS FOR BOTH CHECKER AND PUSHSWAP:
 **
-** Step 1: Convert single string to 2D-array.
+** Step 1: Convert to heap stored 2D array.
+** When argc == 2, use strsplit;
+** When argc > 2, use strset;
 ** - DO IN EACH MAIN - not separate function call
 ** Step 2: Check 2D array for anything not valid as a candidate for ATOI.
 ** - THIS IS A SEPARATE FUNCTION CALL USING THE 2D CHAR ARRAY.
@@ -44,6 +34,27 @@
 ** Step 7: Normalise the Stack. - FUNCTION CALL USING ACTUAL
 ** STACK A WHICH GIVES THE EXPECTED POSITION OF EACH ELEMENT.
 */
+
+/*
+** STEP 1: Get the appropriate dataset for checking.
+** Strsplit already defined in libft, 
+** so just writing dup_2d(), so that irrespective of
+** the input format, can use the same point to data array
+** to perform the checks.
+** n = argc = number of elements in the original array, 
+** used to determine how many places
+** to create in the first level of the array.
+** array is the 2d array we intend to make a copy of.
+** in the case of push_swap this is argv when argc > 2.
+*/
+
+char	**dup_2d(int n, char **array)
+{
+	int	i;
+	int	k;
+
+
+}
 
 /*
 ** STEP 2: Check for valid ATOI candidates.
@@ -111,9 +122,9 @@ int		all_int(char **array)
 ** the end of the array, it pushes them all onto the stack.
 */
 
-t_stack	*create_stack(char **array)
+t_node	*create_stack(char **array)
 {
-	t_stack *new;
+	t_node *new;
 	int		i;
 	int		data;
 

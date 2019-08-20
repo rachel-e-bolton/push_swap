@@ -6,7 +6,7 @@
 /*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 13:19:50 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/14 18:49:59 by rbolton          ###   ########.fr       */
+/*   Updated: 2019/08/20 12:06:33 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #define FALSE 0
 #include "checker_push_swap.h"
 
-t_stack	*push(t_stack *head, int data)
+t_node	*push(t_node *head, int data)
 {
-	t_stack	*tmp;
+	t_node	*tmp;
 
-	tmp = (t_stack *)malloc(1 * sizeof(tmp));
+	tmp = (t_node *)malloc(1 * sizeof(tmp));
 	if (tmp == NULL)
 		exit (0); //This condition should be check, might need an error message like "Error, could not allocate memory. Heap overflow."
 	tmp->data = data;
@@ -27,9 +27,9 @@ t_stack	*push(t_stack *head, int data)
 	return (head);
 }
 
-t_stack	*pop(t_stack *head, int *element) //the int *element pointer is a pointer to the data we wil be popping with this pop() call. We remove it from the stack, but we store it in memory so that we can use it for comparison or pushing later. 
+t_node	*pop(t_node *head, int *element) //the int *element pointer is a pointer to the data we wil be popping with this pop() call. We remove it from the stack, but we store it in memory so that we can use it for comparison or pushing later. 
 {
-	t_stack *tmp;
+	t_node *tmp;
 	int		data;
 
 	tmp = head;
@@ -40,7 +40,7 @@ t_stack	*pop(t_stack *head, int *element) //the int *element pointer is a pointe
 	return (head);
 }
 
-int		is_empty(t_stack *head)
+int		is_empty(t_node *head)
 {
 	return (head == NULL ? TRUE : FALSE);
 }
