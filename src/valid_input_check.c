@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_main.c                                   :+:      :+:    :+:   */
+/*   valid_input_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/10 17:07:00 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 21:29:21 by rbolton          ###   ########.fr       */
+/*   Created: 2020/05/10 20:34:30 by rbolton           #+#    #+#             */
+/*   Updated: 2020/05/10 21:23:27 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "../src/checker_push_swap.h"
+#include "./checker_push_swap.h"
 
-int main (int ac, char **av) 
-{  
+int *valid_input_check(char *args)
+{
+  t_long_array *long_ptr = NULL;
   int *ptr = NULL;
-  
-  if (ac == 2) // We expect a single string as argument. Only reading av[1].
+
+  if (args) {
+    not_int_check(args);
+    long_ptr = set_atol_array(args);
+    size_and_duplic_check(long_ptr);
+    ptr = int_array_from_long(long_ptr);
+    free(long_ptr->array);
+    free(long_ptr);
+    return(ptr);
+  }
+  else
   {
-    ptr = valid_input_check(av[1]);
-    while (ptr)
-    {
-      printf("%d", *ptr);
-      ++ptr;
-    }
-  } 
-  else 
-  {
-    ft_putstr_fd("Error\n", 2);
-    exit(1);
+   ft_putstr_fd("Error\n", 2);
+   exit(1); 
   }
 }

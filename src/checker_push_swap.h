@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 20:03:08 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/10 20:54:48 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,19 @@
 # include <string.h>
 # include "../libft/libft.h"
 
-typedef struct  s_int_array
+typedef struct  s_long_array
 {
-  int *array;
+  long *array;
   int len;
-}               t_int_array;
+}               t_long_array;
 
 void not_int_check(char *str);
 int	is_just_space(int c);
-t_int_array *set_atol_array(char *args);
+t_long_array *set_atol_array(char *args);
+int *valid_input_check(char *args);
+int *int_array_from_long(t_long_array *long_array);
+void check_size(long *array, int len);
+void check_duplicates(long *array, int len);
+void size_and_duplic_check(t_long_array *long_array);
 
 #endif
