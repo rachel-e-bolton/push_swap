@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:29:25 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 11:36:47 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 19:04:58 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ t_long_array *set_atol_array(char *args)
     {
       while ((ptr[j] = ft_atol((args + i))))
       {
-        ptr[j] = ft_atol((args + i));
-        while (ft_isdigit(args[i])) {
+        while (((args[i] == '-') && (ft_isdigit(args[i + 1]))) || ft_isdigit(args[i])) {
           ++i;
         }
         ++i;

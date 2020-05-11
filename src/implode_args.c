@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   not_int_check.c                                    :+:      :+:    :+:   */
+/*   implode_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/10 16:07:05 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 18:46:49 by rbolton          ###   ########.fr       */
+/*   Created: 2020/05/11 19:23:05 by rbolton           #+#    #+#             */
+/*   Updated: 2020/05/11 19:43:29 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "./checker_push_swap.h"
-#include "../libft/libft.h"
 
-void not_int_check(char *str)
+char  *implode_args(char **args, int argcount)
 {
-  int i;
-
-  i = 0;
-  while (str[i] != '\0')
+  int i = 1;
+  char *imploded = NULL;
+  char *tmp1 = NULL;
+  char *tmp2 = NULL;
+  
+  if (args && argcount)
   {
-    if ((is_just_space(str[i]) || ((str[i] == '-') && (ft_isdigit(str[i + 1]))) || ft_isdigit(str[i])))
+    imploded = ft_strjoin(args[i], " ");
+    ++i;
+    while (i < argcount)
     {
+      tmp1 = ft_strjoin(args[i], " ");
+      tmp2 = &(*imploded);
+      imploded = ft_strjoin(imploded, tmp1);
+      free(tmp1);
+      free(tmp2);
       ++i;
-    }
-    else
-    {
-      ft_putstr_fd("Error\n", 2);
-      exit(1);
-    }
+    }  
   }
+  return(imploded);
 }
