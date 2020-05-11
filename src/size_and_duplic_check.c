@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:24:42 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 21:22:38 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 11:10:05 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ void check_duplicates(long *array, int len)
             exit(1);
           }
         }
+        ++j;
       }
+      j = 0;
+      ++i;
     }
   }
   else

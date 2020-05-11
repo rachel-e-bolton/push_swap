@@ -6,14 +6,14 @@
 #    By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 16:44:47 by rbolton           #+#    #+#              #
-#    Updated: 2020/05/10 16:45:43 by rbolton          ###   ########.fr        #
+#    Updated: 2020/05/11 10:54:07 by rbolton          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker_push_swap.a
 SRC = *.c
 OBJECTS = *.o
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:29:25 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 21:22:08 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 11:36:47 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,6 @@ t_long_array *set_atol_array(char *args)
       }
     }
     free(ptr);
-    if (*ptr)
-    {
-      printf("%ld", *ptr);
-    }
   }
   else
   {

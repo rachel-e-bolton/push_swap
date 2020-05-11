@@ -6,25 +6,29 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:42:42 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 21:19:39 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 11:31:41 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./checker_push_swap.h"
 
-int *int_array_from_long(t_long_array *long_array)
+t_int_array *int_array_from_long(t_long_array *long_array)
 {
   int i = 0;
-  int *ptr = NULL;
+  t_int_array *ptr = NULL;
   
   if (long_array)
   {
-    if ((ptr = malloc(long_array->len * sizeof(*ptr))))
+    if ((ptr = malloc(1 * sizeof(*ptr))))
     {
-      while (i < long_array->len)
+      if ((ptr->array = malloc(long_array->len * sizeof(*ptr->array))))
       {
-        ptr[i] = (int)long_array->array[i];
-        ++i;
+        ptr->len = long_array->len;
+        while (i < long_array->len)
+        {
+          ptr->array[i] = (int)long_array->array[i];
+          ++i;
+        }
       }
       return(ptr);
     }

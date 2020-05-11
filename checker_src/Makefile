@@ -1,13 +1,12 @@
 NAME = checker
 SRC = checker_main.c
-LIBS = ../libft/libft.a ../src/checker_push_swap.a
-FLAGS = -Wall -Werror -Wextra
+LIBS = -I../src ../libft/libft.a ../src/*.c
+FLAGS = -Wall -Werror -Wextra -g
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(SRC) $(LIBS) -o $(NAME)
-	mv ./$(NAME) ../
+	gcc $(FLAGS) $(SRC) $(LIBS) -o ../$(NAME)
 
 clean:
 	rm -f ../$(NAME)
