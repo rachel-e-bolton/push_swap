@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:50 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 19:57:21 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 20:17:39 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,4 @@ int main (int ac, char **av)
     ft_putstr_fd("Error\n", 2);
     exit(1);
   }
-  while (int_array->len--)
-  {
-    printf("%d\n", *int_array->array);
-    ++int_array->array;
-  }
-  free(int_array->array);
 }
