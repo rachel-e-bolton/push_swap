@@ -6,11 +6,11 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:42:42 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 11:31:41 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 20:41:55 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./checker_push_swap.h"
+#include "../checker_push_swap.h"
 
 t_int_array *int_array_from_long(t_long_array *long_array)
 {

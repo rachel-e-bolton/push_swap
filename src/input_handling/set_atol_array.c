@@ -6,12 +6,12 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:29:25 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 19:04:58 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 20:43:10 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "./checker_push_swap.h"
+#include "../checker_push_swap.h"
 
 t_long_array *set_atol_array(char *args)
 {

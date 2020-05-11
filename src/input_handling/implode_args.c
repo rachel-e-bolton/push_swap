@@ -6,12 +6,12 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 19:23:05 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 19:43:29 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 20:41:22 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "./checker_push_swap.h"
+#include "../checker_push_swap.h"
 
 char  *implode_args(char **args, int argcount)
 {

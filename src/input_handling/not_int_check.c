@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_just_space.c                                    :+:      :+:    :+:   */
+/*   not_int_check.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/10 16:16:43 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/10 17:04:40 by rbolton          ###   ########.fr       */
+/*   Created: 2020/05/10 16:07:05 by rbolton           #+#    #+#             */
+/*   Updated: 2020/05/11 20:42:27 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define TRUE 1
-#define FALSE 0
-#include "./checker_push_swap.h"
+#include "../checker_push_swap.h"
+#include "../../libft/libft.h"
 
-int	is_just_space(int c)
+void not_int_check(char *str)
 {
-	return ((c == 32));
+  int i;
+
+  i = 0;
+  while (str[i] != '\0')
+  {
+    if ((is_just_space(str[i]) || ((str[i] == '-') && (ft_isdigit(str[i + 1]))) || ft_isdigit(str[i])))
+    {
+      ++i;
+    }
+    else
+    {
+      ft_putstr_fd("Error\n", 2);
+      exit(1);
+    }
+  }
 }

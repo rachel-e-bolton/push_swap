@@ -6,11 +6,11 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:34:30 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 11:27:56 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 20:43:39 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./checker_push_swap.h"
+#include "../checker_push_swap.h"
 
 t_int_array *valid_input_check(char *args)
 {
