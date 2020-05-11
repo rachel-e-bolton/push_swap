@@ -3,3 +3,7 @@ checker.dSYM
 push_swap.dSYM
 launch.json
 tasks.json
+*.a
+*.o
+checker
+push_swap
