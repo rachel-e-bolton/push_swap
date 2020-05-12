@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:42:42 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 20:41:55 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/12 21:17:17 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,9 @@ t_int_array *int_array_from_long(t_long_array *long_array)
           ptr->array[i] = (int)long_array->array[i];
           ++i;
         }
+        return(ptr);
       }
-      return(ptr);
-    }
-    else 
-    {
-      ft_putstr_fd("Error\n", 2);
-      exit(1);
     }
   }
-  else 
-  {
-    ft_putstr_fd("Error\n", 2);
-    exit(1);
-  }
+  return(NULL);
 }

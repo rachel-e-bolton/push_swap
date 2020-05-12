@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_main.c                                     :+:      :+:    :+:   */
+/*   stack_initilisations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/10 15:51:50 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/12 19:56:26 by rbolton          ###   ########.fr       */
+/*   Created: 2020/05/12 18:18:08 by rbolton           #+#    #+#             */
+/*   Updated: 2020/05/12 21:01:07 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <checker_push_swap.h>
+#include "../checker_push_swap.h"
 
-int main (int ac, char **av) 
+t_stacks *init_stacks(t_int_array *int_array)
 {
-  t_int_array *int_array = NULL;
-  char *args = NULL;
   t_stacks *container = NULL;
 
-  if (ac >= 2) // We expect a single string as argument. Only reading av[1]. No flags
+  if ((container = malloc(1 * sizeof(*container))))
   {
-    (ac > 2) ? (args = implode_args(av, ac)) : (args = &(*av[1]));
-    int_array = valid_input_check(args);
-    container = init_stacks(int_array);
-  } 
-  else
-  {
-    exit(1);
+    container->operation_list = NULL;
+    container->stack_a_head = NULL;
+    container->stack_b_head = NULL;
   }
+  
+  
+  // Set the t_stacks operation_list to null;
+  // Initialise stack A with the int array values - including normalisation
+  // Initialise an empty stack B
+  // return pointer to the t_stacks
 }

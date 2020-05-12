@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:29:25 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 20:43:10 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/12 21:19:08 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,10 @@ t_long_array *set_atol_array(char *args)
         long_array->array[i] = ptr[i];
         ++i;
       }
+      free(ptr);
+      return(long_array);
     }
     free(ptr);
   }
-  else
-  {
-    ft_putstr_fd("Error\n", 2);
-    exit(0);
-  }
-  return(long_array);
+  return(NULL);
 }
