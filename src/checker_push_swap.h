@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/12 19:49:51 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/12 22:21:25 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ typedef struct  s_operation
 typedef struct  s_stacks
 {
   t_operation *operation_list;
-  t_stack     **stack_a_head;
-  t_stack     **stack_b_head;
+  t_stack     *stack_a_head;
+  t_stack     *stack_b_head;
 }               t_stacks;
 
 
@@ -68,6 +68,8 @@ void  check_size(long *array, int len);
 void  check_duplicates(long *array, int len);
 void  size_and_duplic_check(t_long_array *long_array);
 char  *implode_args(char **args, int argcount);
+void  set_stack_a(t_stacks *container, t_int_array *int_array);
+t_stack *initialise_stack(void);
 t_stacks *init_stacks(t_int_array *int_array);
 
 #endif
