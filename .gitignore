@@ -1,8 +1,7 @@
 .vscode
 checker.dSYM
 push_swap.dSYM
-launch.json
-tasks.json
+*.json
 *.a
 *.o
 checker
