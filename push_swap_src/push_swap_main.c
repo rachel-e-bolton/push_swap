@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:07:00 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/11 20:36:16 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/11 21:13:51 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main (int ac, char **av)
   }
   else
   {
-    ft_putstr_fd("Error\n", 2);
     exit(1);
   }
 }
