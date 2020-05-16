@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 22:07:55 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 23:55:38 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ t_stack *ft_new_node(int val);
 bool  add_node(t_stack *stack_a, int val);
 void  print_stack_status(t_stacks *container);
 void  print_line(char *a, char *b);
+void  ft_swap(t_stack *stack);
+void  ft_push(t_stack *sender, t_stack *receiver);
 
 #endif

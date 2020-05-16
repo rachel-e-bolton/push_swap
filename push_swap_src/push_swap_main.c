@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:07:00 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 22:41:28 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 23:34:36 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ int main (int ac, char **av)
   {
     exit(1);
   }
-  while(1);
 }
