@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 18:57:24 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 22:07:55 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ typedef struct  s_long_array
 {
   long  *array;
   int   len;
+  bool  v_flag;
 }               t_long_array;
 
 typedef struct  s_int_array
 {
   int *array;
   int len;
+  bool v_flag;
 }               t_int_array;
 
 typedef struct  s_stack
@@ -54,6 +56,7 @@ typedef struct  s_operation
 typedef struct  s_stacks
 {
   bool        is_checker;
+  bool        v_flag;
   t_operation *operation_list;
   t_stack     *stack_a_head;
   t_stack     *stack_b_head;
@@ -74,5 +77,7 @@ t_stack *initialise_stack();
 t_stacks *init_stacks(t_int_array *int_array, bool is_checker);
 t_stack *ft_new_node(int val);
 bool  add_node(t_stack *stack_a, int val);
+void  print_stack_status(t_stacks *container);
+void  print_line(char *a, char *b);
 
 #endif

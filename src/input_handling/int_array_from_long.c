@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 20:42:42 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/12 21:17:17 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 22:11:42 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_int_array *int_array_from_long(t_long_array *long_array)
     {
       if ((ptr->array = malloc(long_array->len * sizeof(*ptr->array))))
       {
+        ptr->v_flag = long_array->v_flag;
         ptr->len = long_array->len;
         while (i < long_array->len)
         {
