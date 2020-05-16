@@ -6,7 +6,7 @@
 #    By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/07 19:11:18 by rbolton           #+#    #+#              #
-#    Updated: 2020/05/10 19:29:03 by rbolton          ###   ########.fr        #
+#    Updated: 2020/05/16 18:00:41 by rbolton          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ all:
 clean:
 	(cd src; make clean)
 	(cd libft; make clean)
-	(cd checker_src; make clean)
-	(cd push_swap_src; make clean)
 
 fclean:
 	(cd src; make fclean)

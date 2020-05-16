@@ -32,4 +32,28 @@ rrr : rra and rrb at the same time.
 
 # SCRIPTS FOR RANDOM NUMBER GENERATION:
 
-Still to populate
+ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`;
+`a` is the lower limit for the numbers generated and `b` is the upper limit.
+The script will generate all of the numbers in the range icluding `0` and put them to a shuffle.
+
+To check the number of arguments being passed to based on your range:
+Run `echo $ARG | wc -w` after the first ruby script.
+
+# BUILDING AND RUNNING THE EXECUTABLES
+
+Run `make` at the root of the repository to create both libraries and executables.
+
+Run `<RandomNumberScript> ./push_swap $ARG | ./checker -v $ARG` to test both programs together.
+
+# ADDITIONAL MAKEFILE RULES
+
+`make clean` will remove all object files from the root directory and subdirectories where relevant.
+
+`make fclean` will remove all object files, library files and executables from the root directory and subdirectories where relevant.
+
+`make re` will run `fclean` and re-run `make`.
+
+Each subdirectory's project can be re-made individually from the root using the following commands:
+
+`make re-libft` ; `make re-src` ; `make re-checker` ; `make re-push_swap`
+

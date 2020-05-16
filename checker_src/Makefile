@@ -8,10 +8,7 @@ all: $(NAME)
 $(NAME):
 	gcc $(FLAGS) $(SRC) $(LIBS) -o ../$(NAME)
 
-clean:
-	rm -f ../$(NAME)
-
-fclean: clean
+fclean: all
 	rm -f ../$(NAME)
 
 re: fclean all 

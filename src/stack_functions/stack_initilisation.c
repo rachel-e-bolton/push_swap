@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 18:18:08 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/12 22:33:24 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 18:06:01 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 
 t_stack *new_node(int val)
 {
-  //mallocs and creates a node which it returns to be added to the stack.
+    t_stack *node;
+
+  if (!(node = malloc(1 * sizeof(*node))))
+    return(NULL);
+    
+  node->index = 0;
+  node->value = val;
+  node->is_master = false;
+  node->prev = NULL;
+  node->next = NULL;
+
+  return(node); 
 }
 
 bool  add_node(t_stack *stack, int val)
@@ -40,7 +51,7 @@ t_stack *initialise_stack(void)
     return(NULL);
     
   master_node->index = 0;
-  master_node->value = 1234567;
+  master_node->value = 0;
   master_node->is_master = true;
   master_node->prev = NULL;
   master_node->next = NULL;
