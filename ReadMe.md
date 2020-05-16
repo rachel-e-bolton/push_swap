@@ -46,7 +46,10 @@ Run `echo $ARG | wc -w` after the first ruby script.
 
 Run `make` at the root of the repository to create both libraries and executables.
 
-Run `$ARG=<RandomNumberScript> ./push_swap $ARG | ./checker -v $ARG` to test both programs together.
+Run `ARG=<RandomNumberScript> ./push_swap $ARG | ./checker $ARG` to test both programs together.
+
+Run `ARG=<RandomNumberScript> ./push_swap $ARG | ./checker -v $ARG` to test both programs together in verbose mode.\
+Verbose mode will show the status of each stack after each operation.
 
 # ADDITIONAL MAKEFILE RULES:
 
