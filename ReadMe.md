@@ -1,10 +1,12 @@
 # ABOUT THE PROJECT:
 
-The PushSwap project involves the creation of two programs: Checker and PushSwap.
+The PushSwap project involves the creation of two programs: `checker` and `push_swap`.
 
-The Checker program takes an integer stack and reads sorting instructions from the STDIN, it executes the instructions and determines whether or not the instructions given have successfully sorted the stack.
+The `checker` program takes an integer stack and reads sorting instructions from `stdin`, it executes the instructions and determines whether or not the instructions given have successfully sorted the stack.
 
-The PushSwap program takes an integer stack and uses various algorithms to determine the best set of sorting instructions (sort the stack in the least number of operations). The recommended set of sort instructions is returned to the STDOUT where it can be redirected to Checker. 
+The `push_swap` program takes an integer stack and uses various algorithms to determine the best set of sorting instructions (sort the stack in the least number of operations). The recommended set of sort instructions is printed to `stdout` where they can be redirected to `checker`.
+
+In this way `checker` verifies whether the instructions printed by the `push_swap` program will sort the stack given as an argument.
 
 # AVAILABLE OPERATIONS:
 
