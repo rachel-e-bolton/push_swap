@@ -34,10 +34,10 @@ rrr : rra and rrb at the same time.
 
 ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`;
 
-`a` is the lower limit for the numbers generated and `b` is the upper limit.
+`a` is the lower limit for the numbers generated and `b` is the upper limit.\
 The script will generate all of the numbers in the range icluding `0` and put them to a shuffle.
 
-To check the number of arguments being passed to based on your range:
+To check the number of arguments being passed to your `ARG` variable:
 Run `echo $ARG | wc -w` after the first ruby script.
 
 # BUILDING AND RUNNING THE EXECUTABLES
