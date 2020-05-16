@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbolton <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 17:48:54 by rbolton           #+#    #+#             */
-/*   Updated: 2019/08/14 17:52:50 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 20:21:48 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ long int	ft_atol(char const *str)
 	int			i;
 	long int	ans;
 	int			sign;
+  int    valid;
 
 	i = 0;
 	ans = 0;
 	sign = 1;
+  valid = FALSE;
 	while (ft_isspace(str[i]) == TRUE)
 		i++;
 	(((str[i] == '-') && (ft_isdigit(str[i + 1]) == TRUE)) ?
@@ -33,8 +35,12 @@ long int	ft_atol(char const *str)
 	{
 		ans = (ans * 10) + (str[i] - '0');
 		i++;
+    valid = TRUE;
 	}
-	return (ans * sign);
+  if (valid == TRUE)
+	  return (ans * sign);
+  else
+    exit(1);
 }
 
 /*

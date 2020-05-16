@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/12 22:21:25 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 18:57:24 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 typedef struct  s_long_array
 {
-  long *array;
-  int len;
+  long  *array;
+  int   len;
 }               t_long_array;
 
 typedef struct  s_int_array
@@ -37,22 +37,23 @@ typedef struct  s_int_array
 
 typedef struct  s_stack
 {
-  int value;
-  int index;
-  bool  is_master;
+  int             value;
+  int             index;
+  bool            is_master;
   struct s_stack  *prev;
   struct s_stack  *next;
 }               t_stack;
 
 typedef struct  s_operation
 {
-  char  *operation;
+  char               *operation;
   struct s_operation *prev;
   struct s_operation *next;
 }               t_operation;
 
 typedef struct  s_stacks
 {
+  bool        is_checker;
   t_operation *operation_list;
   t_stack     *stack_a_head;
   t_stack     *stack_b_head;
@@ -69,7 +70,9 @@ void  check_duplicates(long *array, int len);
 void  size_and_duplic_check(t_long_array *long_array);
 char  *implode_args(char **args, int argcount);
 void  set_stack_a(t_stacks *container, t_int_array *int_array);
-t_stack *initialise_stack(void);
-t_stacks *init_stacks(t_int_array *int_array);
+t_stack *initialise_stack();
+t_stacks *init_stacks(t_int_array *int_array, bool is_checker);
+t_stack *ft_new_node(int val);
+bool  add_node(t_stack *stack_a, int val);
 
 #endif
