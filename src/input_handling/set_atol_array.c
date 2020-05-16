@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:29:25 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 22:17:25 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/16 22:35:53 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ t_long_array *set_atol_array(char *args)
   
   if (args && (long_array = malloc(1 * sizeof(long_array))))
   {
-    if ((args[0] == '-') && (args[1] == 'v'))
+    if ((args[0] == '-') && (args[1] == 'v') && (args[2] == ' '))
     {
-      i = 2;
+      i = 3;
       v_flag = true;
     }
     if ((ptr = malloc(((ft_strlen(args) - 2) * sizeof(ptr))))) 
