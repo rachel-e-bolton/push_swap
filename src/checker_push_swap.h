@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 09:12:52 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 09:24:46 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,8 @@ void  rrr(t_stacks *container);
 void  ra(t_stacks *container);
 void  rb(t_stacks *container);
 void  rr(t_stacks *container);
+void  sa(t_stacks *container);
+void  sb(t_stacks *container);
+void  ss(t_stacks *container);
 
 #endif
