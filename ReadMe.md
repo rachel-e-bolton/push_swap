@@ -59,7 +59,7 @@ For testing, however, you may want to mock this process. This is one way this ca
 
 Run ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`
 
-Run `INSTR="<instruction>\n<instruction>"` - where <instruction> is any instruction followed by a '\n' character (except the last instruction).
+Run `INSTR="<instruction>\n<instruction>"` - where `<instruction>` is any instruction followed by a '\n' character (except the last instruction).
 
 Run `echo -e $INSTR | ./checker $ARG` to check the result of checker without stack status\
   OR\
@@ -67,8 +67,8 @@ Run `echo -e $INSTR | ./checker -v $ARG` to check the result of checker with the
 
 EG:
 
-ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`
-INSTR="pa\nrra\npb\npb\n\pa\nrrr"
+ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`\
+INSTR="pa\nrra\npb\npb\n\pa\nrrr"\
 echo -e $INSTR | ./checker -v $ARG
 
 # ADDITIONAL MAKEFILE RULES:
