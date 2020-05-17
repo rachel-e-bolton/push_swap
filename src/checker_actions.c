@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 09:33:03 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 10:22:46 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 14:45:40 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int run_checker(t_stacks *container)
 {
   if (!(get_operations(container)))
     return(1);
-  if (is_sorted_value(container))
+  if (is_sorted_index(container))
   {
     ft_putendl("OK");
     return(0);

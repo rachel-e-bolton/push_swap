@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 18:18:08 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 22:14:24 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 14:11:43 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ t_stacks *init_stacks(t_int_array *int_array, bool is_checker)
       container->stack_b_head = initialise_stack();
   }
   set_stack_a(container, int_array);
+  normalise_stack(container->stack_a_head, int_array->len);
   return(container);
 }
 

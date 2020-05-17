@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 10:21:39 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 14:11:09 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ bool  get_operations(t_stacks *container);
 bool  is_sorted_index(t_stacks *container);
 bool  is_sorted_value(t_stacks *container);
 int run_checker(t_stacks *container);
+void  normalise_stack(t_stack *stack, int stack_len);
 
 #endif
