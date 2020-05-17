@@ -6,11 +6,13 @@
 #    By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/07 19:11:18 by rbolton           #+#    #+#              #
-#    Updated: 2020/05/16 18:00:41 by rbolton          ###   ########.fr        #
+#    Updated: 2020/05/18 00:41:40 by rbolton          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-all:
+FLAGS = -Wall -Werror -Wextra
+
+all: random
 	(cd src; make all)
 	(cd libft; make all)
 	(cd checker_src; make all)
@@ -43,3 +45,7 @@ re-src: all
 
 re-libft: all
 	(cd libft; make re)
+
+random:
+	$(CC) $(FLAGS) random.c ./libft/libft.a -o random
+	@echo "\033[4;32m== random compiled    ==\033[0m"	

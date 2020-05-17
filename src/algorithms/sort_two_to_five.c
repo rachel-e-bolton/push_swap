@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:55:02 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 20:05:46 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 21:53:20 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,56 @@ void sort_three(t_stacks *container, char stack_to_sort)
   int thr = 0;
   t_stack *head = NULL;
   
+  (stack_to_sort == 'a') ? (head = container->stack_a_head) : (head = container->stack_b_head);
   while (!(is_sorted_single(container->stack_a_head)))
   {
-      if (stack_to_sort == 'a')
-        head = container->stack_a_head;
-      else if (stack_to_sort == 'b')
-        head = container->stack_b_head;
-      if (head->next && head->next->next && head->next->next->next)
-      {
-        one = head->next->value;
-        two = head->next->next->value;
-        thr = head->next->next->next->value;
-      }
-      if (one < two && one < thr && two > thr)
-        rra(container);
-      else if (one > two && one < thr && two < thr)
-        sa(container);
-      else if (one < two && one > thr && two > thr)
-        rra(container);
-      else if (one > two && one > thr && two < thr)
-        ra(container);
-      else if (one > two && one > thr && two > thr)
-        ra(container); 
+    if (head->next && head->next->next && head->next->next->next)
+    {
+      one = head->next->value;
+      two = head->next->next->value;
+      thr = head->next->next->next->value;
+    }
+    if (one < two && one < thr && two > thr)
+      (stack_to_sort == 'a') ? rra(container) : rrb(container);
+    else if (one > two && one < thr && two < thr)
+      (stack_to_sort == 'a') ? sa(container) : sb(container);
+    else if (one < two && one > thr && two > thr)
+      (stack_to_sort == 'a') ? rra(container) : rrb(container);
+    else if (one > two && one > thr && two < thr)
+      (stack_to_sort == 'a') ? ra(container) : rb(container);
+    else if (one > two && one > thr && two > thr)
+      (stack_to_sort == 'a') ? ra(container) : rb(container);
+    (stack_to_sort == 'a') ? (head = container->stack_a_head) : (head = container->stack_b_head);
+  }
+}
+
+void reverse_sort_three(t_stacks *container, char stack_to_sort)
+{
+  int one = 0;
+  int two = 0;
+  int thr = 0;
+  t_stack *head = NULL;
+  
+  (stack_to_sort == 'a') ? (head = container->stack_a_head) : (head = container->stack_b_head);
+  while (!(is_sorted_single_rev(head)))
+  {
+    if (head->next && head->next->next && head->next->next->next)
+    {
+      one = head->next->value;
+      two = head->next->next->value;
+      thr = head->next->next->next->value;
+    }
+    if (one > two && one > thr && two < thr)
+      (stack_to_sort == 'a') ? rra(container) : rrb(container);
+    else if (one < two && one > thr && two > thr)
+      (stack_to_sort == 'a') ? sa(container) : sb(container);
+    else if (one > two && one < thr && two < thr)
+      (stack_to_sort == 'a') ? rra(container) : rrb(container);
+    else if (one < two && one < thr && two > thr)
+      (stack_to_sort == 'a') ? ra(container) : rb(container);
+    else if (one < two && one < thr && two < thr)
+      (stack_to_sort == 'a') ? ra(container) : rb(container);
+    (stack_to_sort == 'a') ? (head = container->stack_a_head) : (head = container->stack_b_head);
   }
 }
 

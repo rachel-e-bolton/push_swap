@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 14:13:19 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 14:57:44 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:02:00 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void  normalise_stack(t_stack *stack, int stack_len)
     return ;
   if ((stack->is_master == true) && (max_node = stack->next) && (cursor = stack->next))
   {
-    while ((max_node->index > 0) && max_node) 
+    while ((max_node->index > -1) && max_node) 
       max_node = max_node->next;
     while (cursor)
     {
-      if (cursor->index == 0)
+      if (cursor->index < 0)
       {
         if (cursor->value > max_node->value)
           max_node = cursor;

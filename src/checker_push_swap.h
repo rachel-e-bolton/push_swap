@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 20:04:38 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 23:13:26 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,26 @@ typedef struct  s_stack
   struct s_stack  *next;
 }               t_stack;
 
-typedef struct  s_operation
-{
-  char               *operation;
-  struct s_operation *prev;
-  struct s_operation *next;
-}               t_operation;
-
 typedef struct  s_stacks
 {
   bool        is_checker;
   bool        v_flag;
   int         max_stack_len;
-  t_operation *operation_list;
   t_stack     *stack_a_head;
   t_stack     *stack_b_head;
 }               t_stacks;
 
+typedef struct  s_moves
+{
+  t_stack   *node;
+  int       stack_a_moves;
+  int       stack_b_moves;
+  int       total_moves;
+  int       len_a;
+  int       len_b;
+  int       position;
+  int       max_a;
+}               t_moves;
 
 void  not_int_check(char *str);
 int is_just_space(int c);
@@ -104,11 +107,29 @@ void  normalise_stack(t_stack *stack, int stack_len);
 void  run_push_swap(t_stacks *container);
 void  sort_two(t_stacks *container);
 void  sort_three(t_stacks *container, char stack_to_sort);
+void  reverse_sort_three(t_stacks *container, char stack_to_sort);
 bool  is_sorted_single(t_stack *stack);
+bool  is_sorted_single_rev(t_stack *stack);
 int stack_height(t_stack *stack);
 void  pb_smallest(t_stacks  *container);
 void  sort_five(t_stacks *container);
 int from_start(t_stack *start, t_stack *marker);
 int to_end(t_stack *start, t_stack *marker);
+void  sort_large(t_stacks *container, t_moves *moves, int max_a);
+void  set_up(t_stacks *container, int max_a);
+void  find_best_move(t_moves *moves, t_stack *stack_a, t_stack *stack_b);
+void	set_best_move(t_moves *move, int a_moves, int b_moves, int total_moves);
+void	moves_init(t_moves *move, t_stack *stack_a, t_stack *stack_b);
+int		moves_count(t_stack *stack, int index);
+void	moves_calc(t_moves *moves, int *a_moves, int *b_moves, int *total);
+int		max_index(t_stack *stack);
+int		min_index(t_stack *stack);
+int		end_index(t_stack *stack);
+int		next_lowest_index(t_stack *stack, int index);
+void	multi_rotate_both(t_stacks *container, t_moves *moves, int direction);
+void	multi_rotate_a(t_stacks *container, t_moves *moves);
+void	multi_rotate_b(t_stacks *container, t_moves *moves);
+void	largest_to_top(t_stacks *container);
+void	push_back_to_a(t_stacks *container);
 
 #endif

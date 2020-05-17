@@ -34,11 +34,21 @@ rrr : rra and rrb at the same time.
 
 # SCRIPTS FOR RANDOM NUMBER GENERATION:
 
+## Option 1:
+---
+Run `make` which will make all executables including `random`.
+
+Run ARG=`./random <elements>` where `<elements>` is the number of values to be added to the stack.\
+The script will generate a random list of postive and negative integers.
+
+## Option 2:
+---
 ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`
 
 `a` is the lower limit for the numbers generated and `b` is the upper limit.\
 The script will generate all of the numbers in the range icluding `0` and put them to a shuffle.
 
+### Note:
 To check the number of arguments being passed to your `ARG` variable:\
 Run `echo $ARG | wc -w` after the first ruby script.
 

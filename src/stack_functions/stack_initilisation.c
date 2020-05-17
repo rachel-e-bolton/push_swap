@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 18:18:08 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 15:39:23 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:02:30 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack *ft_new_node(int val)
   if (!(node = malloc(1 * sizeof(*node))))
     return(NULL);
     
-  node->index = 0;
+  node->index = -1;
   node->value = val;
   node->is_master = false;
   node->prev = NULL;
@@ -74,8 +74,8 @@ t_stack *initialise_stack()
   if (!(master_node = malloc(1 * sizeof(*master_node))))
     return(NULL);
     
-  master_node->index = 0;
-  master_node->value = 0;
+  master_node->index = -1;
+  master_node->value = -1;
   master_node->is_master = true;
   master_node->prev = NULL;
   master_node->next = NULL;
@@ -93,7 +93,6 @@ t_stacks *init_stacks(t_int_array *int_array, bool is_checker)
       container->v_flag = int_array->v_flag;
       container->is_checker = is_checker;
       container->max_stack_len = int_array->len;
-      container->operation_list = NULL;
       container->stack_a_head = initialise_stack();
       container->stack_b_head = initialise_stack();
   }

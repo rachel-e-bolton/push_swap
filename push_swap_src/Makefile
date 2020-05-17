@@ -1,6 +1,6 @@
 NAME = push_swap
 SRC = push_swap_main.c
-LIBS = -I../src ../libft/libft.a ../src/*/*.c ../src/*.c
+LIBS = -I../src ../libft/libft.a ../src/checker_push_swap.a
 FLAGS = -Wall -Werror -Wextra -g
 
 all: $(NAME)
