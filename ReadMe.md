@@ -34,7 +34,7 @@ rrr : rra and rrb at the same time.
 
 # SCRIPTS FOR RANDOM NUMBER GENERATION:
 
-ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`;
+ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`
 
 `a` is the lower limit for the numbers generated and `b` is the upper limit.\
 The script will generate all of the numbers in the range icluding `0` and put them to a shuffle.
@@ -50,6 +50,26 @@ Run `ARG=<RandomNumberScript> ./push_swap $ARG | ./checker $ARG` to test both pr
 
 Run `ARG=<RandomNumberScript> ./push_swap $ARG | ./checker -v $ARG` to test both programs together in verbose mode.\
 Verbose mode will show the status of each stack after each operation.
+
+# TESTING PIPING INSTRUCTIONS TO CHECKER:
+
+The standard usage of the functions is to run `push_swap` on the stack and then run `checker` on the same stack having piped the output instructions from `push_swap` to `checker`.
+
+For testing, however, you may want to mock this process. This is one way this can be done:
+
+Run ARG=`ruby -e "puts (a..b).to_a.shuffle.join(' ')"`
+
+Run `INSTR="<instruction>\n<instruction>"` - where <instruction> is any instruction followed by a '\n' character (except the last instruction).
+
+Run `echo -e $INSTR | ./checker $ARG` to check the result of checker without stack status\
+  OR\
+Run `echo -e $INSTR | ./checker -v $ARG` to check the result of checker with the stack status after each instruction.
+
+EG:
+
+ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`
+INSTR="pa\nrra\npb\npb\n\pa\nrrr"
+echo -e $INSTR | ./checker -v $ARG
 
 # ADDITIONAL MAKEFILE RULES:
 

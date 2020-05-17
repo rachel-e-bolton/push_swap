@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 20:30:50 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 01:32:34 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 10:55:54 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void  print_stack_status(t_stacks *container)
     
     if (cursor_a->is_master == true && cursor_b->is_master == true)
     {
-      ft_putstr("|-------------||-------------|\n|     Stack A || Stack B     |\n|-------------||-------------|\n");
+      ft_putstr("\n-------------||-------------|\n|     Stack A || Stack B     |\n|-------------||-------------|\n");
     }
     if (cursor_a->next)
       cursor_a = cursor_a->next;
