@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 14:11:09 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 17:04:43 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct  s_stacks
 {
   bool        is_checker;
   bool        v_flag;
+  int         max_stack_len;
   t_operation *operation_list;
   t_stack     *stack_a_head;
   t_stack     *stack_b_head;
@@ -100,5 +101,10 @@ bool  is_sorted_index(t_stacks *container);
 bool  is_sorted_value(t_stacks *container);
 int run_checker(t_stacks *container);
 void  normalise_stack(t_stack *stack, int stack_len);
+void  run_push_swap(t_stacks *container);
+void  sort_two(t_stacks *container);
+void  sort_three(t_stacks *container, char stack_to_sort);
+void  sort_three_in_b(t_stacks *container);
+bool  is_sorted_single(t_stack *stack);
 
 #endif

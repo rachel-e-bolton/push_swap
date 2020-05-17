@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 18:18:08 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 14:11:43 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 15:39:23 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,14 @@ t_stacks *init_stacks(t_int_array *int_array, bool is_checker)
       if (!(container = malloc(1 * sizeof(*container))))
         return(NULL);
       container->v_flag = int_array->v_flag;
-      container->is_checker = is_checker;  
+      container->is_checker = is_checker;
+      container->max_stack_len = int_array->len;
       container->operation_list = NULL;
       container->stack_a_head = initialise_stack();
       container->stack_b_head = initialise_stack();
   }
   set_stack_a(container, int_array);
-  normalise_stack(container->stack_a_head, int_array->len);
+  normalise_stack(container->stack_a_head, container->max_stack_len);
   return(container);
 }
 
