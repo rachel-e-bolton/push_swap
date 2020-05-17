@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:50 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 09:10:21 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 09:17:19 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main (int ac, char **av)
   t_stacks *container = NULL;
   bool is_checker = true;
   
-  if (ac >= 2) // We expect a single string as argument. Only reading av[1]. No flags
+  if (ac >= 2)
   {
     (ac > 2) ? (args = implode_args(av, ac)) : (args = &(*av[1]));
     int_array = valid_input_check(args);
