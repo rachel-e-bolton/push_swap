@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 08:53:26 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 09:03:54 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,8 @@ void  ft_rotate(t_stack *stack);
 void  ft_rev_rotate(t_stack *stack);
 void  pa(t_stacks *container);
 void  pb(t_stacks *container);
+void  rra(t_stacks *container);
+void  rrb(t_stacks *container);
+void  rrr(t_stacks *container);
 
 #endif
