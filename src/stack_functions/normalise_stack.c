@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 14:13:19 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 14:41:14 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 14:57:44 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void  normalise_stack(t_stack *stack, int stack_len)
     return ;
   if ((stack->is_master == true) && (max_node = stack->next) && (cursor = stack->next))
   {
-    while ((max_node->index > 0) && max_node) // loop through nodes until we find our first unindexed node (index = 0)
+    while ((max_node->index > 0) && max_node) 
       max_node = max_node->next;
-    while (cursor) // while the cursor points to a node - this loops through the entire stack
+    while (cursor)
     {
-      if (cursor->index == 0) // if the index of the current node is 0
+      if (cursor->index == 0)
       {
-        if (cursor->value > max_node->value) // if the value of the number at that node is greater than the value of the node currently pointed by max_node
-          max_node = cursor; // then set the max_node to now point to this unindexed node
+        if (cursor->value > max_node->value)
+          max_node = cursor;
       }
       cursor = cursor->next;
     }
