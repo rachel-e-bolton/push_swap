@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:55:02 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 17:17:14 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 20:05:46 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,43 @@ void sort_three(t_stacks *container, char stack_to_sort)
       else if (one > two && one > thr && two > thr)
         ra(container); 
   }
+}
+
+void  pb_smallest(t_stacks  *container)
+{
+	t_stack *smallest = NULL;
+	t_stack *cursor = NULL;
+
+	smallest = container->stack_a_head->next;
+	cursor = smallest;
+	while (cursor)
+	{
+		if (cursor->index < smallest->index)
+			smallest = cursor;
+		cursor = cursor->next;
+	}
+  cursor = container->stack_a_head;
+	if (from_start(cursor, smallest) < to_end(cursor, smallest))
+	{
+		while (cursor->next != smallest)
+			ra(container);
+		pb(container);
+	}
+	else
+	{
+		while (cursor->next != smallest)
+			rra(container);
+		pb(container);
+	}
+}
+
+void  sort_five(t_stacks *container)
+{
+  int stack_hght = 0;
+
+  while ((stack_hght = stack_height(container->stack_a_head) > 3))
+    pb_smallest(container);
+  sort_three(container, 'a');
+  pa(container);
+  pa(container);
 }

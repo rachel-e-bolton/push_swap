@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:30:05 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 17:20:02 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 20:11:27 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void run_push_swap(t_stacks *container)
     sort_two(container);
   else if (container->max_stack_len == 3)
     sort_three(container, 'a');
-  // else if (container->max_stack_len < 6)
-    // sort_five(container);
+  else if (container->max_stack_len < 6)
+    sort_five(container);
   // else
   // {
   //   /* Do the bigger sort manoeuvres */

@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 17:04:43 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 20:04:38 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,11 @@ void  normalise_stack(t_stack *stack, int stack_len);
 void  run_push_swap(t_stacks *container);
 void  sort_two(t_stacks *container);
 void  sort_three(t_stacks *container, char stack_to_sort);
-void  sort_three_in_b(t_stacks *container);
 bool  is_sorted_single(t_stack *stack);
+int stack_height(t_stack *stack);
+void  pb_smallest(t_stacks  *container);
+void  sort_five(t_stacks *container);
+int from_start(t_stack *start, t_stack *marker);
+int to_end(t_stack *start, t_stack *marker);
 
 #endif
