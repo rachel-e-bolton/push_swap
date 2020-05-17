@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:50 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 01:33:48 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 08:43:28 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int main (int ac, char **av)
   {
     (ac > 2) ? (args = implode_args(av, ac)) : (args = &(*av[1]));
     int_array = valid_input_check(args);
-    container = init_stacks(int_array, is_checker); 
+    container = init_stacks(int_array, is_checker);
   } 
   else
   {
     exit(1);
   }
+  while (1);
 }

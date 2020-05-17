@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/16 23:55:38 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 08:38:52 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void  print_stack_status(t_stacks *container);
 void  print_line(char *a, char *b);
 void  ft_swap(t_stack *stack);
 void  ft_push(t_stack *sender, t_stack *receiver);
+void  ft_rotate(t_stack *stack);
+void  ft_rev_rotate(t_stack *stack);
 
 #endif
