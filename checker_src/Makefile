@@ -1,6 +1,6 @@
 NAME = checker
 SRC = checker_main.c
-LIBS = -I../src ../libft/libft.a ../src/*/*.c
+LIBS = -I../src ../libft/libft.a ../src/*/*.c ../src/*.c
 FLAGS = -Wall -Werror -Wextra -g
 
 all: $(NAME)

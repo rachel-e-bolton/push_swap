@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 15:51:41 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 09:24:46 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/17 10:21:39 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,10 @@ void  rr(t_stacks *container);
 void  sa(t_stacks *container);
 void  sb(t_stacks *container);
 void  ss(t_stacks *container);
+bool  do_operation(t_stacks *container, char *str);
+bool  get_operations(t_stacks *container);
+bool  is_sorted_index(t_stacks *container);
+bool  is_sorted_value(t_stacks *container);
+int run_checker(t_stacks *container);
 
 #endif
