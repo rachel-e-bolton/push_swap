@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:55:02 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 21:53:20 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/18 08:32:52 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ void  sort_five(t_stacks *container)
 {
   int stack_hght = 0;
 
+  if (is_sorted_index(container))
+    return ;
   while ((stack_hght = stack_height(container->stack_a_head) > 3))
     pb_smallest(container);
   sort_three(container, 'a');

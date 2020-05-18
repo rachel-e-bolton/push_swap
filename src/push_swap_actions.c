@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:30:05 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 20:58:49 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/18 08:30:16 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void run_push_swap(t_stacks *container)
 {
   t_moves *moves = NULL;
   
+  if(container->max_stack_len == 1)
+    return ;
   if (container->max_stack_len == 2)
     sort_two(container);
   else if (container->max_stack_len == 3)

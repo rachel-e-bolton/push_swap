@@ -6,7 +6,7 @@
 /*   By: rbolton <rbolton@student.wethinkcode.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 20:52:57 by rbolton           #+#    #+#             */
-/*   Updated: 2020/05/17 23:25:19 by rbolton          ###   ########.fr       */
+/*   Updated: 2020/05/18 08:34:43 by rbolton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void  sort_large(t_stacks *container, t_moves *moves, int max_a)
 
   head_a = container->stack_a_head;
   head_b = container->stack_b_head;
+  if (is_sorted_index(container))
+    return ;
   if (head_a->next && max_a > 3)
   {
     set_up(container, max_a);
